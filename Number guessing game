@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <conio.h>
+using namespace std;
+int main(){
+    srand(time(0));
+    int min=1,max=100,guess=101,attempt=0;
+    int rangeOfNumber=min +(rand()%(max-min+1));
+    
+    while(guess!=rangeOfNumber){
+    system("color 06");
+    cout<<"\tWelcome to Guess the Number Game"<<endl;
+    cout<<"Enter Your Guess under(1-100):"; cin>>guess;
+    system("cls");
+    if(guess<1 || guess>100){cout<<"Enter on under(1-100) , Try again \nPress any key."; getch(); system("cls");
+    }
+    else if(guess>rangeOfNumber){cout<<"!Too high , Try again \nPress any key."; getch(); system("cls");}
+    else if(guess<rangeOfNumber){cout<<"!Too Low , Try again \nPress any key."; getch(); system("cls");}
+    
+    attempt++;
+    }
+    cout<<"You Guess was correct the answer is :"<<guess<<endl;
+    cout<<"Number of Attempt :"<<attempt<<endl;
+    cout<<"\"You Win\"";
+}
